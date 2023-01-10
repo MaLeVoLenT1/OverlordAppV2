@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             /** Basic Information */
             $table -> id();
-            $table -> string('username',15) -> unqiue();
+            $table -> string('username',15) -> unique();
             $table -> string('display_name', 15) -> nullable();
             $table -> string('email', 40) -> unique();
             $table -> timestamp('email_verified_at') -> nullable();
@@ -32,7 +32,7 @@ class CreateUsersTable extends Migration
                 'moderator',
                 'administrator',
                 'banned'
-            ])->default('member');
+            ])->default('guest');
 
             /** Discord Information */
             $table->bigInteger('discord_id')-> nullable();
