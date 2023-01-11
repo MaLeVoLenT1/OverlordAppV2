@@ -7,7 +7,8 @@
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "bot-14-7-1": "node --harmony resources/node/discord-14-7-1.js"
     },
     "devDependencies": {
         "axios": "^1.2.2",
@@ -23,9 +24,13 @@
         "vue-template-compiler": "^2.7.14"
     },
     "dependencies": {
+        "@discordjs/rest": "^1.5.0",
         "ajv": "^8.12.0",
+        "chalk": "^4.1.2",
+        "discord-api-types": "^0.37.27",
         "discord.js": "^14.7.1",
         "discord.js-commando": "^0.12.3",
+        "dotenv": "^16.0.3",
         "jquery": "^3.6.3"
     }
 }
