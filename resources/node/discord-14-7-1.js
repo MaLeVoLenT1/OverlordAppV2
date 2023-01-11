@@ -1,6 +1,4 @@
-require('dotenv').config();
-const {token} = process.env;
-const { Client, GatewayIntentBits, Collection} = require('discord.js');
+const {Client, GatewayIntentBits, Collection} = require('discord.js');
 const config = require("./config.json");
 
 // Built In with Node.js, had to install a node package to run. (File System Module)
@@ -15,6 +13,7 @@ bot.commandArray = [];
 // Uses readdirSync to get a list of all the directories within the specified folder structure.
 const functionFolders = fs.readdirSync(`${config.AppLocation}/functions`);
 
+// Iterates through all the directories in the param, 'functionFolders' and for each folder, it reads the files inside.
 for (const folder of functionFolders){
     const functionFiles = fs.readdirSync(`${config.AppLocation}/functions/${folder}`).filter((file) => file.endsWith(".js"));
     for (const file of functionFiles) require(`./functions/${folder}/${file}`)(bot);

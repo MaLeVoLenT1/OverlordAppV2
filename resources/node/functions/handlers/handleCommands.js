@@ -19,7 +19,6 @@ module.exports = (bot) => {
         }
 
         const botID = '1062206022393024542';
-        const guildID = '926546678385872977';
         const rest = new REST({version: '9'}).setToken(config.token);
         try {
             console.log("Started refreshing application (/) commands.");
